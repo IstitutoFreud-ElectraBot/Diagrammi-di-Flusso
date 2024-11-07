@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="StrisciaLed"/>
+        <attribute name="authors" value="alepe"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-11-04 10:30:36 AM"/>
+        <attribute name="created" value="YWxlcGU7TVNJOzIwMjQtMTEtMDQ7MTA6MDY6MjYgQU07MjAxMA=="/>
+        <attribute name="edited" value="YWxlcGU7TVNJOzIwMjQtMTEtMDQ7MTA6MzA6MzYgQU07MTsyMTE2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="ledPins" type="Integer" array="True" size="5"/>
+            <declare name="ledStates" type="Boolean" array="True" size="5"/>
+            <declare name="ledcount, analogPIN, livelli, ledlevel, thisLed, i" type="Integer" array="False" size=""/>
+            <declare name="pinmode" type="Boolean" array="True" size="5"/>
+            <assign variable="ledcount" expression="5"/>
+            <for variable="i" start="0" end="ledcount-1" direction="inc" step="1">
+                <output expression="&quot;Dimmi i PIN al quale attaccare i LED&quot;" newline="True"/>
+                <input variable="ledPins[i]"/>
+                <assign variable="ledStates[i]" expression="false"/>
+            </for>
+            <for variable="i" start="0" end="ledcount-1" direction="inc" step="1">
+                <output expression="&quot;Dimmi la modalit&#224; dei PIN&quot;" newline="True"/>
+                <input variable="pinmode[i]"/>
+            </for>
+            <while expression="1==1">
+                <output expression="&quot;Dimmi il livello corrispondente del potenziometro&quot;" newline="True"/>
+                <input variable="livelli"/>
+                <assign variable="ledlevel" expression="livelli*ledcount/1023"/>
+                <output expression="&quot;il livello &#233;: &quot;" newline="True"/>
+                <output expression="ledlevel" newline="True"/>
+                <for variable="thisLed" start="0" end="ledcount-1" direction="inc" step="1">
+                    <if expression="thisLed&lt;ledlevel">
+                        <then>
+                            <assign variable="ledStates[thisLed]" expression="true"/>
+                        </then>
+                        <else>
+                            <assign variable="ledStates[thisLed]" expression="false"/>
+                        </else>
+                    </if>
+                    <output expression="ledStates[thisLed]" newline="True"/>
+                </for>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

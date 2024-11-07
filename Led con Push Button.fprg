@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Blinkling Led"/>
+        <attribute name="authors" value="giuse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-24 09:55:26 "/>
+        <attribute name="created" value="Z2l1c2U7TEFQVE9QLU9DUDZKN1AwOzIwMjQtMTAtMjQ7IjA5OjMwOjQ2ICI7Mjc3OQ=="/>
+        <attribute name="edited" value="Z2l1c2U7TEFQVE9QLU9DUDZKN1AwOzIwMjQtMTAtMjQ7IjA5OjU1OjI2ICI7MjsyODkz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="led, pushbutton" type="Integer" array="False" size=""/>
+            <declare name="pinmode1, pinmode2" type="String" array="False" size=""/>
+            <output expression="&quot;Dimmi che pin vuoi&quot;" newline="True"/>
+            <input variable="led"/>
+            <output expression="&quot;Dimmi la modalit&#224; del pin&quot;" newline="True"/>
+            <input variable="pinmode1"/>
+            <output expression="&quot;Dimmi che pin vuoi utilizzare per il bottone&quot;" newline="True"/>
+            <input variable="pushbutton"/>
+            <output expression="&quot;Dimmi la modalit&#224; del PIN del bottone&quot;" newline="True"/>
+            <input variable="pinmode2"/>
+            <while expression="1==1">
+                <if expression="pushbutton2==&quot;HIGH&quot;">
+                    <then/>
+                    <else/>
+                </if>
+                <output expression="&quot;led HIGH&quot;" newline="True"/>
+                <output expression="&quot;Acceso per 1 Secondo&quot;" newline="True"/>
+                <output expression="&quot;Led LOW&quot;" newline="True"/>
+                <output expression="&quot;Spento per 1 Secondo&quot;" newline="True"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

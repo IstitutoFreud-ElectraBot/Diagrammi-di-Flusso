@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Carta, Forbice, Sasso"/>
+        <attribute name="authors" value="giuse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-24 09:24:13 "/>
+        <attribute name="created" value="Z2l1c2U7TEFQVE9QLU9DUDZKN1AwOzIwMjQtMTAtMjM7IjEyOjA3OjM0ICI7Mjc3Mw=="/>
+        <attribute name="edited" value="Z2l1c2U7TEFQVE9QLU9DUDZKN1AwOzIwMjQtMTAtMjQ7IjA5OjI0OjEzICI7NTsyODg4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="scelta, computer" type="String" array="False" size=""/>
+            <declare name="numero, vittorie, pareggi, sconfitte, i" type="Integer" array="False" size=""/>
+            <assign variable="vittorie" expression="0"/>
+            <assign variable="pareggi" expression="0"/>
+            <assign variable="sconfitte" expression="0"/>
+            <output expression="&quot;Scegli tra Carta, Forbice e Sasso&quot;" newline="True"/>
+            <input variable="scelta"/>
+            <while expression="scelta!=&quot;carta&quot; and scelta!=&quot;forbice&quot; and scelta!=&quot;sasso&quot;">
+                <output expression="&quot;Coglione, Scrivi Giusto&quot;" newline="True"/>
+                <input variable="scelta"/>
+            </while>
+            <for variable="i" start="0" end="9999" direction="inc" step="1">
+                <assign variable="numero" expression="random(3)"/>
+                <if expression="numero==0">
+                    <then>
+                        <assign variable="computer" expression="&quot;carta&quot;"/>
+                    </then>
+                    <else>
+                        <if expression="numero==1">
+                            <then>
+                                <assign variable="computer" expression="&quot;forbice&quot;"/>
+                            </then>
+                            <else>
+                                <assign variable="computer" expression="&quot;sasso&quot;"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <if expression="scelta==&quot;carta&quot; and computer==&quot;sasso&quot; or scelta==&quot;forbice&quot; and computer==&quot;carta&quot; or scelta==&quot;sasso&quot; and computer==&quot;forbice&quot;">
+                    <then>
+                        <assign variable="vittorie" expression="vittorie+1"/>
+                    </then>
+                    <else>
+                        <if expression="scelta==&quot;carta&quot; and computer==&quot;carta&quot; or scelta==&quot;forbice&quot; and computer==&quot;forbice&quot; or scelta==&quot;sasso&quot; and computer==&quot;sasso&quot;">
+                            <then>
+                                <assign variable="pareggi" expression="pareggi+1"/>
+                            </then>
+                            <else>
+                                <assign variable="sconfitte" expression="sconfitte+1"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </for>
+            <output expression="&quot;Il Numero di vittorie &#232; &quot;" newline="False"/>
+            <output expression="vittorie" newline="True"/>
+            <output expression="&quot;Il Numero di Pareggi &#232; &quot;" newline="False"/>
+            <output expression="pareggi" newline="True"/>
+            <output expression="&quot;In Numero di Sconfitte &#232; &quot;" newline="False"/>
+            <output expression="sconfitte" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

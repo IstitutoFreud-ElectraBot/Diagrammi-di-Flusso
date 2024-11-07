@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Controollo Di Numeri"/>
+        <attribute name="authors" value="giuse"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-17 09:42:04 "/>
+        <attribute name="created" value="Z2l1c2U7TEFQVE9QLU9DUDZKN1AwOzIwMjQtMTAtMTc7IjA5OjMxOjU1ICI7Mjc4Mg=="/>
+        <attribute name="edited" value="Z2l1c2U7TEFQVE9QLU9DUDZKN1AwOzIwMjQtMTAtMTc7IjA5OjQyOjA0ICI7MTsyODg2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="numero" type="Integer" array="False" size=""/>
+            <output expression="&quot;Ciao, Dammi un numero da controllare!&quot;" newline="True"/>
+            <input variable="numero"/>
+            <if expression="numero&gt;0">
+                <then>
+                    <output expression="&quot;Il numero &#232; maggiore di zero&quot;" newline="True"/>
+                </then>
+                <else>
+                    <if expression="numero==0">
+                        <then>
+                            <output expression="&quot;Il numero &#232; uguale a zero&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Il numero &#232; minore di zero&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <comment text="%2=0 &#232; il modo di dire al sistema di dire che il numero &#232; divisibile per 2 con il resto 0. quindi pari&#13;&#10;&#13;&#10;%2=1 il modo di dire al sistema di dire che il numero &#232; divisibile per 2 con il resto 1. quindi dispari"/>
+            <if expression="numero%2=0">
+                <then>
+                    <output expression="&quot;Il numero &#232; pari&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Il numero &#232; dispari&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
